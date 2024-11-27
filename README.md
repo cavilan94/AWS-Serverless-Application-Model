@@ -26,8 +26,55 @@ Luego se da clik en siguiente hasta finalizar la configuración y se valida que 
 Para probar que todo este configurado de manera correcta, se debe dar click en la aplicación montada en AWS Amplify, esto abrira un menú con los detalles de la aplicación donde se ´peude encontrar un link bajo el titulo "dominio"
 ![image](https://github.com/user-attachments/assets/35ab48c2-46c3-4643-a89c-c19159fe596c)
 
- el cual al darle click abrira la aplicación desplegada, la cual se deve ver asi
+ el cual al darle click abrira la aplicación de WildRydes desplegada, la cual se deve ver asi
 
 ![image](https://github.com/user-attachments/assets/e7df9671-d7d6-471c-9299-8f167aef4ce9)
 
+Módulo 2: administrar usuarios
+Pasos:
+1) Crear un grupo de usuarios en Amazon Cognito, este grupo de usuarios sera utilizado por la aplicación para validar tokens de acceso y permitir o denegar el acceso a la aplicación WEB.
+Deste este menú se da click en crear grupo de usuarios.
+
+![image](https://github.com/user-attachments/assets/24358172-1acc-42b1-9ee5-d473a6cfdd96)
+en en el menú de configuración de la aplicación agregue como nombre de aplicación: WildRydesWebApp y en tipo de aplicación se debe seleccionar aplicación web
+
+![image](https://github.com/user-attachments/assets/2fc58201-f411-463f-b8c0-e952ab07d555)
+
+En el menú de opciones para  identificación del inicio de sesión seleccionar usuario y correo electronico y finalmente crear
+
+![image](https://github.com/user-attachments/assets/23516aba-d824-4329-8e97-c4f2f50695a8)
+
+Se debe cambiar el nombre del grupo de usuarios a WildRydes.
+
+Luego de estos cambios, los grupos de usuarios de Amazon cognito deberian verse como en la siguiente imagen:
+
+![image](https://github.com/user-attachments/assets/0aea37c0-9bc5-49f5-ac57-5f9d5e735e3b)
+
+Al darle click en el nombre se peude ver la información del grupo, aqui es importante copiar y guardad el ID del grupo, ya que este sera requerido mas adelante.
+
+![image](https://github.com/user-attachments/assets/fadb02db-3c98-4b0f-8615-8a8d9504986c)
+
+De igual forma al darle click sobre el nombre de la aplicación, se puede ver su configuración, se debe copiar y guardar el ID de la aplicación, ya que este sera requerido mas adelante.
+
+![image](https://github.com/user-attachments/assets/56a5c84d-5b7e-4498-b844-4eef79747c46)
+
+2) Actualizar el archivo de configuración del sitio WEB
+
+Dentro de los archivos que se descargaron del repositorio github en el modulo 1, hay un archivo llamado config.js, el cual contiene la configuración de la pagina web y debe ser modificado, los campos que se deben modificar son userPoolId: y userPoolClientId:, el valor de userPoolId: corresponde al ID del grupo copiado en el paso anterior y userPoolClientId:corresponde al ID de la aplicación copiado en el paso anterior, de igual forma se debe verificar que la zona horaria sea la correcta, en caso contrario se debe cambiar.
+
+![image](https://github.com/user-attachments/assets/fd47cf09-a7da-4764-b629-8bb94cb881a6)
+
+Se guardan los cambios en el archivo y se actualiza en el repositorio de github, ejecutando los siguientes comandos:
+
+git add .
+git commit -m "new_config"
+git push
+
+Al actualizar el repositorio en github, la aplicación de AWS Amplify se debe actualizar de forma automática.
+
+3) Validar la implementación.
+
+Dentro de los archivos descargados en el modulo 1, hay uno llamado register.html, al abrir este archivo en algún navegador, se redireccionara a una pagina donde se puede crear una cuenta para acceder a la aplicación WildRydes, aqui se debe ingresar un correo y contraseña.
+
+![image](https://github.com/user-attachments/assets/dc26e741-1f77-4b53-ab9f-c98201e42e05)
 
