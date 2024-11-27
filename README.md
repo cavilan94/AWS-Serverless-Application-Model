@@ -91,7 +91,27 @@ Módulo 3: backend de servicio sin servidor
 
 Pasos:
 
-1) Crear una función lambda para adminsitrar solicitudes
+1) Crear una función lambda para adminsitrar solicitudes realziadas en la aplicación WEB.
 
+Desde el menú de lambda se da click en el boton "crear neuva función"
+
+![image](https://github.com/user-attachments/assets/fe4e4696-0d0e-4026-8ddd-100a95a4b1a1)
+
+Se mantiene la opción de "crear desde cero", se ingresa el nombre de la función como "RequestUnicorn" y en la configuración de los roles, se indica que se va a usar un rol ya existente, se selecciona el rol LabRole de la lista desplegable y finalmente se da click en crear función.
+
+![image](https://github.com/user-attachments/assets/8813ecdd-e2df-4982-81d3-0d83089e8d48)
+
+![image](https://github.com/user-attachments/assets/43dd2373-6212-4748-9f93-5eabba7f21c2)
+
+El resultado debería verse como en la siguiente imagen:
+
+![image](https://github.com/user-attachments/assets/77e05521-490a-4194-9fc4-c3d70e8c1012)
+
+
+Al darle click a la función creada se puede ver su configuración, en la parte de abajo esta su codigo fuente, el cual debe ser modificado, remplazandolo con el script que esta en el archivo Lambda-code.txt de este repositorio, finalmente se da click en el boton deploy para poder desplegar la función y aplicar el cambio.
+
+![image](https://github.com/user-attachments/assets/7616216a-75e0-467f-83da-5a3ad5545f0b)
+
+![image](https://github.com/user-attachments/assets/d7a3e6cc-45f0-4550-bbf0-e05e970d42bd)
 
 
