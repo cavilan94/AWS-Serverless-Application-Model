@@ -114,4 +114,10 @@ Al darle click a la función creada se puede ver su configuración, en la parte 
 
 ![image](https://github.com/user-attachments/assets/d7a3e6cc-45f0-4550-bbf0-e05e970d42bd)
 
+2) Vlidar la implementación de la función Lambda.
+
+En el menú de Lambda para al configuración del codigo fuente en la aprte de abjo que dice "test events", se da click en el mas para generar un nuevo evento, esto abrira un menú para ingresar el codigo del evento a probar, el codigo que se debe ingresar esta en el archivo test-event.txt adjunto en el repositorio.
+
+![image](https://github.com/user-attachments/assets/2c8a6e6b-4636-4987-8cc6-53c30ab61a76)
+
 
