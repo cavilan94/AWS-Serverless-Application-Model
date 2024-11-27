@@ -1,4 +1,4 @@
-En este documento se documentaran los pasos para crear una aplicacion AWS serverless, el procedimeinto esta separado en 5 modulos.
+En este documento se explicaran los pasos para crear una aplicacion AWS serverless, el procedimeinto esta separado en 5 modulos.
 
 Módulo 1: alojamiento web estático con implementación:
 Pasos:
@@ -197,3 +197,31 @@ Una vez esta ha sido creada, en el menú de la izquierda en la opción etapas, s
 ![image](https://github.com/user-attachments/assets/d454d85d-9154-46ab-af62-3968054a5b74)
 
 5) Actualizar los archivos de configuración
+
+Dentro del archivo config.js se debe ingresar la URL de invocación copiada en el paso anterior.
+
+![image](https://github.com/user-attachments/assets/a979434c-d242-4701-89e4-c095963df4ef)
+
+Adicionalmente se debe editar el archivo ride.html, cambaindo todas las partes que dicen versión 4.3 por la versión 4.6
+
+![image](https://github.com/user-attachments/assets/568ae374-d3f1-4fb0-a2f0-311e19b13c24)
+
+Una vez se han hecho estas modificaciones y se han salvado los archivos, se deben volver a subir al repositorio en Github con los comandos:
+
+git add .
+git commit -m "new_config"
+git push
+
+6) Validar la implementación.
+
+Desde el menú AWS Amplify se da click en la aplicación creada para ver los detalles y se copia la URL del dominio.
+
+![image](https://github.com/user-attachments/assets/a9bc320c-3f6a-4997-aa7c-fb8ceffdb0c3)
+
+Esta URL se ingresa en un navegador adicionando al final /ride.html, el ingresar nos redirigira al menú de sign in, para ingresar con las credenciales previamente creadas.
+
+![image](https://github.com/user-attachments/assets/57941b53-6b1b-4b2b-8584-824f6ba24692)
+
+Una vez se halla ingresado con las credenciales indicadas, debe aparecer un mapa sobre el cual se puede señalar una posición y al darle click sobre el boton request unicorn, debe inciar una animación donde un unicornio se dirige a la posición marcada, y a la derecha se muestra la información y estados del unicornio asignado.
+
+![image](https://github.com/user-attachments/assets/66e1a155-19fb-4e6f-ba88-404e7b27eebb)
