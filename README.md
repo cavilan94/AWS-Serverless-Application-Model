@@ -78,3 +78,20 @@ Dentro de los archivos descargados en el modulo 1, hay uno llamado register.html
 
 ![image](https://github.com/user-attachments/assets/dc26e741-1f77-4b53-ab9f-c98201e42e05)
 
+Una vez se halla ingresado los valores solicitados, se da click en el boton "lest ryde" y se debe recibir un codigo de confirmación en el correo ingresado.
+
+dentro de lsoa rchivos descargados hay uno que se llama verify.html, al abrirlo en algún navegador, este nso redireccioanra a una pagina donde se puede verificar la cuenta creada ene l pasoa nteriro, utilizando el codigo de verificación que llega al correo.
+
+![image](https://github.com/user-attachments/assets/58e165d0-f934-4c26-b506-59189b355a23)
+
+Se peude verificar si los usuarios hallan sido correctamente creados/validados,desde el menú de cognito, dando clcik en el grupo de usuarios y en el menu de la izxquierda que dice adminsitrar usuarios, deben msotrarse las cuentas de usuario creadas.
+![image](https://github.com/user-attachments/assets/c023d520-ddfa-47d8-9794-b948ec43f609)
+
+Módulo 3: backend de servicio sin servidor
+
+Pasos:
+
+1) Crear una función lambda para adminsitrar solicitudes
+
+
+
