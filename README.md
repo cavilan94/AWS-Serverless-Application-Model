@@ -84,7 +84,7 @@ dentro de lsoa rchivos descargados hay uno que se llama verify.html, al abrirlo 
 
 ![image](https://github.com/user-attachments/assets/58e165d0-f934-4c26-b506-59189b355a23)
 
-Se peude verificar si los usuarios hallan sido correctamente creados/validados,desde el menú de cognito, dando clcik en el grupo de usuarios y en el menu de la izxquierda que dice adminsitrar usuarios, deben msotrarse las cuentas de usuario creadas.
+Se puede verificar si los usuarios hallan sido correctamente creados/validados,desde el menú de cognito, dando clcik en el grupo de usuarios y en el menu de la izxquierda que dice adminsitrar usuarios, deben msotrarse las cuentas de usuario creadas.
 ![image](https://github.com/user-attachments/assets/c023d520-ddfa-47d8-9794-b948ec43f609)
 
 Módulo 3: backend de servicio sin servidor
@@ -114,10 +114,86 @@ Al darle click a la función creada se puede ver su configuración, en la parte 
 
 ![image](https://github.com/user-attachments/assets/d7a3e6cc-45f0-4550-bbf0-e05e970d42bd)
 
-2) Vlidar la implementación de la función Lambda.
+2) Validar la implementación de la función Lambda.
 
-En el menú de Lambda para al configuración del codigo fuente en la aprte de abjo que dice "test events", se da click en el mas para generar un nuevo evento, esto abrira un menú para ingresar el codigo del evento a probar, el codigo que se debe ingresar esta en el archivo test-event.txt adjunto en el repositorio.
+En el menú de Lambda para al configuración del codigo fuente en la aprte de abjo que dice "test events", se da click en el mas para generar un nuevo evento, esto abrira un menú para ingresar el codigo del evento a probar, el codigo que se debe ingresar esta en el archivo test-event.txt adjunto en el repositorio y finalmente se salva el evento.
 
 ![image](https://github.com/user-attachments/assets/2c8a6e6b-4636-4987-8cc6-53c30ab61a76)
 
+Para probar el evento se da click en el boton test y se selecciona del menú desplegable el evento creado.
 
+![image](https://github.com/user-attachments/assets/d57989ff-9841-4d63-9047-c43465a8ab35)
+
+La salida del evento se muestra en la parte de abajo y debe ser similar a como se muestra en la siguiente imagen:
+
+![image](https://github.com/user-attachments/assets/7a5595a1-6065-4f0c-a869-8ec9614b187d)
+
+Módulo 4: implementar una API RESTful
+
+Pasos:
+
+1) Crear una API REST
+
+En este paso se va a crear una API REST que va hacer llamados a la función lambda para la egstion de peticiones realziadas en la aplicación WEB..
+
+En el menú API Gateway se da click en el boton crear API.
+
+![image](https://github.com/user-attachments/assets/7d1141c4-01d9-4374-b90e-92c8b90a5f6e)
+
+Luego se da click en crear para la opción API REST
+
+![image](https://github.com/user-attachments/assets/2f200195-3fc9-489e-802f-84035b0763db)
+
+En la configuración se escoge nueva API, se asigna el nombre "WildRydes" al API y se selecciona de la lista desplegable la opción "optimizado para periferia" y finalmente se da click en crear.
+
+![image](https://github.com/user-attachments/assets/a450f06f-91e9-4896-a89b-3b19d64852a6)
+
+El resultado debería verse como se ve en pantalla.
+
+![image](https://github.com/user-attachments/assets/928d3ce2-348c-4510-9ad0-58be8e3c8f1b)
+
+2) Crear autorizador
+
+En este paso se va a crear un método de autenticación usando el grupo de usuarios creado en el menú de cognito en el Módulo 2.
+
+Al darle click sobre el nombre de la API creada, se abrira su configuración, en las opciones de la izquiera se da click en la opción autorizadores y luego en crear nuevo autorizador.
+
+![image](https://github.com/user-attachments/assets/531c70ba-1e81-41d9-a80d-e89a92c28aaa)
+
+Se ingresa WildRydes como nombre del autorizador, el tipo de autenticación se selecciona como cognito, de la lista desplegable de grupos se selecciona el grupo WildRydes creado previamente, en origen de token se ingresa la palabra autorizacion y finalmente se da click en crear autorizador.
+
+![image](https://github.com/user-attachments/assets/7f43b221-c355-43b0-8e82-866fff9b4368)
+
+3) Crear un nuevo recurso y metodo
+
+En el menú de la izquierda se da click en recursos y luego en el boton crear recurso.
+
+![image](https://github.com/user-attachments/assets/90bcb86c-dbac-4d86-853b-d72dbae1ef99)
+
+Se asigna el nombre ride a la ruta, se selecciona el cuadro que dice CORS y se da click en crear recurso
+
+![image](https://github.com/user-attachments/assets/cb9723a9-e07a-4c86-8978-71d5f0e809dc)
+
+Una vez se a creado al ruta, se selecciona y se da click en el boton crear método.
+
+![image](https://github.com/user-attachments/assets/6ec3589f-d53d-4c51-b654-974c813120f9)
+
+Dentro de la configuración del método que se va a crear, se selecciona POST como tipo de método del menú desplegable, se selecciona Lambda como integración, se habilita la integración de proxy por lambda y se selecciona la función Lambda "RequestUnicorn" creada en los pasos anteriores y finalmente se da click en guardar.
+
+![image](https://github.com/user-attachments/assets/9a4ef3be-a359-49b4-8919-2c36e2f3db53)
+
+4) Implementar API
+
+Sobre recurso /ride creado, se da click en el boton "implementar API"
+
+![image](https://github.com/user-attachments/assets/8b617b96-bb42-49bf-8705-7cf01b300546)
+
+Se selecciona la opción nueva etapa y se ingresa la palabra prod como nombre de la etapa, finalmente se da click en el boton implementar.
+
+![image](https://github.com/user-attachments/assets/5e0658a1-af5a-41d5-b7f4-a0cb3e808b7a)
+
+Una vez esta ha sido creada, en el menú de la izquierda en la opción etapas, se puede encontrar las etapas creadas, aqui se debe copiar la URL de invocación que se muestra para la etapa prod, ya que se va a requerir en el siguiente paso.
+
+![image](https://github.com/user-attachments/assets/d454d85d-9154-46ab-af62-3968054a5b74)
+
+5) Actualizar los archivos de configuración
