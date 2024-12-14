@@ -1,4 +1,4 @@
-En este documento se explicaran los pasos para crear una aplicacion AWS serverless, siguiendo un tutorial para el despliegue de una aplicación llamada wildrydes, la cual genere un servicio de viajes solicitando unicornios como emdiode transporte, el procedimeinto esta separado en 5 modulos.
+En este documento se explicaran los pasos para crear una aplicacion AWS serverless, siguiendo un tutorial para el despliegue de una aplicación llamada wildrydes, la cual genere un servicio de viajes solicitando unicornios como medio de transporte, el procedimeinto esta separado en 5 modulos.
 
 
 Arquitectura de la aplicación:
