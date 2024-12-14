@@ -1,4 +1,12 @@
-En este documento se explicaran los pasos para crear una aplicacion AWS serverless, el procedimeinto esta separado en 5 modulos.
+En este documento se explicaran los pasos para crear una aplicacion AWS serverless, siguiendo un tutorial para el despliegue de una aplicación llamada wildrydes, la cual genere un servicio de viajes solicitando unicornios como emdiode transporte, el procedimeinto esta separado en 5 modulos.
+
+
+Arquitectura de la aplicación:
+
+![image](https://github.com/user-attachments/assets/c0d28b65-8fdf-4c84-8664-b8816e644c89)
+
+En la parte de front end se despliega varios archivos en formato HTML por medio de AWS Amplify, estos archivos ofrecen un formato para el registro y creación de usuarios que seran usados en la aplicación y adicionalmente un mapa para probar la aplicación, solicitando el servicio de wildrydes, en la parte del back end se tiene una función lambda para realizar la asignación del unicornio que atendera la solicitud y un método de autenticación por medio de AWS Cognito, por medio de cognito se validara la autenticidad del usuario que quiere hacer uso de la aplicación, la consulta a la función lambda y la autenticación de usuarios se hace por medio de un API gateway usando un metodo get.
+
 
 Módulo 1: alojamiento web estático con implementación:
 Pasos:
